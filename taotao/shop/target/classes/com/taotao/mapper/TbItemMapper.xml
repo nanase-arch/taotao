@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace:名称空间 我的BookMapper.xml映射文件 BookMapper.java是我们的接口文件 外界调用接口就是想要执行接口里面的方法
+	外界想要调用接口执行接口里面的方法从而去执行sql语句 请吧配置文件和接口建立映射关系 那么外界调用这个接口里面的所有方法 他都会来到这个映射文件下
+	去执行sql语句 -->
+<mapper namespace="com.taotao.mapper.TbItemMapper">
+    <sql id="tbitemByIds">
+        <where>
+            <foreach collection="ids" open="id in(" close=")" separator="," item="id">
+                  #{id}
+            </foreach>
+        </where>
+    </sql>
+    
+    
+    <select id="findTbItemById" resultType="com.taotao.bean.TbItem">
+        SELECT * FROM tbitem WHERE id = #{itemId}
+    </select>
+    <select id="getTbItemCount" resultType="int">
+        SELECT count(*) FROM  tbitem
+    </select>
+    
+    <select id="getItemByPage" resultType="com.taotao.vo.TbItemVo">
+        SELECT
+            a.id,
+            a.title,
+            a.sellPoint,
+            a.price,
+            a.num,
+            a.image,
+            b.`name` tbItemCatName,
+            a.`status`,
+            a.created,
+            a.updated
+        FROM
+            tbitem a
+        INNER JOIN tbitemcat b ON a.cId = b.id
+        LIMIT
+            #{index},#{limit}
+    </select>
+    
+    <update id="delItemByIds">
+        UPDATE tbitem SET `status` = 3
+        <include refid="tbitemByIds"/>
+    </update>
+    <update id="changeItemStatus">
+        UPDATE tbitem SET `status` = #{statusCode}
+        <include refid="tbitemByIds"/>
+    </update>
+
+</mapper>
