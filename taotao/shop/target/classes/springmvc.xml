@@ -11,17 +11,16 @@
     http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
 	<!-- 1.注解扫描 只扫描controller层 -->
-	<context:component-scan base-package="com.taotao.controller" />
+	<context:component-scan base-package="com.taotao.controller,com.taotao.exception" />
 	<!-- 2.注解驱动 -->
 	<!-- 引用这个转化器 -->
-	<mvc:annotation-driven/>
+	<mvc:annotation-driven conversion-service="conversionService"/>
 	<!-- 3.视图解析器 -->
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver ">
 		<property name="viewClass"
 			value="org.springframework.web.servlet.view.JstlView" />
 		<!-- jsp前缀 -->
-		<property name="prefix" value="/jsp/" />
 		<!-- jsp后缀 -->
 		<property name="suffix" value=".jsp" />
 	</bean>
@@ -42,6 +41,14 @@
 			<value>5242880</value>
 		</property>
 	</bean>
-	
+	<bean id="conversionService"
+		  class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+		<property name="converters">
+			<set>
+				<bean class="com.taotao.myconversion.DateConverter"/>
+			</set>
+		</property>
+	</bean>
+
 
 </beans>

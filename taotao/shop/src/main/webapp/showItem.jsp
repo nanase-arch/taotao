@@ -12,7 +12,7 @@
 </head>
 <body>
 <div>
-    <form class="layui-form" action="/item/multiQuery ">
+    <form class="layui-form">
         <div class="layui-form-item">
             <%--商品标题--%>
             <label class="layui-form-label">商品标题</label>
@@ -32,64 +32,60 @@
                     <input type="text" name="price2" placeholder="￥" class="layui-input">
                 </div>
             </div>
-                <%--商品状态 1:正常 2:下架 3:删除--%>
+            <%--商品状态 1:正常 2:下架 3:删除--%>
             <div class="layui-inline">
                 <label class="layui-form-label">状态选择</label>
                 <div class="layui-input-inline">
-                    <select name="status">
+                    <select id="status" name="status">
+                        <option value="0">请选择商品状态</option>
                         <option value="1">正常</option>
                         <option value="2">下架</option>
                         <option value="3">删除</option>
                     </select>
                 </div>
             </div>
-                <%--日期范围--%>
+            <%--日期范围--%>
             <div class="layui-inline">
-                <label class="layui-form-label">范围</label>
+                <label class="layui-form-label">时间范围</label>
                 <div class="layui-input-inline">
                     <%--日期开始时间--%>
-                    <input type="text" name="date1" id="date1" lay-verify="date" autocomplete="off"  placeholder="开始时间"
-                            class="layui-input">
+                    <input type="text" name="date1" id="date1"  autocomplete="off" placeholder="开始时间"
+                           class="layui-input">
                 </div>
                 <div class="layui-form-mid">-</div>
                 <div class="layui-input-inline">
                     <%--日期开始时间--%>
-                    <input type="text" name="date2" id="date2"  placeholder="结束时间" class="layui-input">
+                    <input type="text" name="date2" id="date2" placeholder="结束时间" class="layui-input">
                 </div>
             </div>
-                <button type="submit" class="layui-btn layui-bg-red" lay-submit="" lay-filter="demo1">立刻搜索</button>
+            <button type="button" id="searchBtn" class="layui-btn layui-bg-red" lay-submit="" lay-filter="demo1">立刻搜索</button>
         </div>
     </form>
 </div>
 
 <table class="layui-hide" id="itemTableAll" lay-filter="itemTableAll"></table>
-<%--<div style="display: none" class="layui-btn-container" id="topBtnGroup">--%>
-<script type="text/html" id="topBtnGroup">
-    <div class="layui-btn-container">
-        <button class="layui-btn layui-btn-sm" lay-event="delItem">选中删除</button>
-        <button class="layui-btn layui-btn-sm" lay-event="addItem">新增商品</button>
-        <button class="layui-btn layui-btn-sm" lay-event="upload">商品上架</button>
-        <button class="layui-btn layui-btn-sm" lay-event="offload">商品下架</button>
-    </div>
-</script>
-<%--</div>--%>
+<div style="display: none" class="layui-btn-container" id="topBtnGroup">
+    <button class="layui-btn layui-btn-sm" lay-event="delItem">选中删除</button>
+    <button class="layui-btn layui-btn-sm" lay-event="upload">商品上架</button>
+    <button class="layui-btn layui-btn-sm" lay-event="offload">商品下架</button>
+    <button class="layui-btn layui-btn-sm" lay-event="addItem">选中导出</button>
+</div>
 <div style="display: none" type="text/html" id="rightBtnGroup">
     <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
-    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="export" >导出</a>
 </div>
 
 <script type="text/html" id="statusTransform">
     {{#  if(d.status == 1){ }}
-        <span>正常</span>
+    <span>正常</span>
     {{#  } else if(d.status==2){ }}
-        <span>下架</span>
+    <span>下架</span>
     {{#  } else if(d.status==3){ }}
-        <span>删除</span>
+    <span>删除</span>
     {{#  } }}
 </script>
 <script type="text/javascript" id="itemImage">
-
-   <image src="{{d.itemImage}}"; style="width: 100px;height: 100px" />
+    <img src = "{{d.itemImage}}" style = "width: 100px;height: 100px"/>
 </script>
 
 </body>

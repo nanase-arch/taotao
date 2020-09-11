@@ -3,6 +3,8 @@ package com.taotao.service;
 import com.taotao.bean.TbItem;
 import com.taotao.common.TaotaoResult;
 import com.taotao.vo.LayuiTableResult;
+import com.taotao.vo.MultipleQuery;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 
 import java.util.List;
 
@@ -35,5 +37,19 @@ public interface TbItemService {
      * @param ids 需要修改的商品id
      * @return 200表示成功
      */
-    TaotaoResult changeItemStatus(Integer statusCode, Integer[] ids);
+    TaotaoResult changeItemStatus(Integer statusCode, Long[] ids);
+
+    /**
+     * 多条件查询商品信息
+     * @param multipleQuery 商品标题、价格范围、商品状态、时间范围
+     * @return layui table表需要的json数据格式
+     */
+    LayuiTableResult getMultipleQuery(MultipleQuery multipleQuery);
+
+    /**
+     * 根据id查询数据库得到商品信息 吧商品信息存入到 excel表对象里面去 并且返回这个对象
+     * @param ids
+     * @return
+     */
+    HSSFWorkbook getexportExcel(List<Long> ids);
 }

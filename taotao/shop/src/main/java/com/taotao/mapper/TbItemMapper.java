@@ -1,6 +1,7 @@
 package com.taotao.mapper;
 
 import com.taotao.bean.TbItem;
+import com.taotao.vo.MultipleQuery;
 import com.taotao.vo.TbItemVo;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -14,7 +15,19 @@ public interface TbItemMapper {
      * @return
      */
     TbItem findTbItemById(Long itemId);
+
+    /**
+     * 获取商品总记录条数
+     * @return
+     */
     int getTbItemCount();
+
+    /**
+     * 分页查询商品信息
+     * @param index 当前索引
+     * @param limit 每页显示条数
+     * @return 页面需要的对象
+     */
     List<TbItemVo> getItemByPage(@Param("index") Integer index, @Param("limit") Integer limit);
 
     /**
@@ -30,5 +43,21 @@ public interface TbItemMapper {
      * @param ids 需要上架和下架的商品id
      * @return
      */
-    int changeItemStatus(@Param("statusCode") Integer statusCode, @Param("ids") Integer[] ids);
+    int changeItemStatus(@Param("statusCode") Integer statusCode, @Param("ids") Long[] ids);
+
+    /**
+     * 多条件搜索，符合搜索条件的商品记录条数
+     * @param multipleQuery 标题、价格范围、商品状态、时间范围
+     * @return 符合多个条件的商品记录总条数
+     */
+    int getMultipleQueryCount(MultipleQuery multipleQuery);
+
+    /**
+     * 多条件搜索，符合搜索条件的商品信息
+     * @param multipleQuery 标题、价格范围、商品状态、时间范围
+     * @return 符合多个条件的商品信息集合对象
+     */
+    List<TbItemVo> getMultipleQuery(MultipleQuery multipleQuery);
+
+    List<TbItemVo> findTbItemVoByIds(@Param("ids") List<Long> ids);
 }

@@ -1,23 +1,85 @@
 $(function () {
-    layui.use(['form', 'layedit', 'laydate', 'table'], function () {
+    var dateObj1;
+    var dateObj2;
+    layui.use(['form', 'laydate', 'table'], function () {
         var form = layui.form
             , layer = layui.layer
-            , layedit = layui.layedit
             , laydate = layui.laydate
             , table = layui.table;
-        laydate.render({
+
+        //点击搜索按钮的点击事件
+        $("#searchBtn").click(function () {
+            var titleVal = $("input[name='title']").val();
+            var price1Val = $("input[name='price1']").val();
+            var price2Val = $("input[name='price2']").val();
+            //被选中的这一列的值
+            var statusVal = $("#status option:selected").val();
+            var date1Val = $("input[name='date1']").val();
+            var date2Val = $("input[name='date2']").val();
+
+            /*
+            *   1.web程序员帮我们吧数据做了校验
+            *   2.java后台做校验
+            *   3.这里不能发起ajax请求
+            *       为什么呢？
+            *   我们点击按钮搜索的目的是为了在table表格上面显示数据
+            *   LayuiTableResult
+            *   他到底是 json的数据格式 还是key=value的数据格式
+            *   你的controller 就不知道怎么接受了 从哪里可以分析到他是什么类型的数据
+            *   F12
+            * */
+            table.reload('itemTableAll', {
+                url: '/item/multipleQuery',
+                where: {
+                    title: titleVal,
+                    price1: price1Val*100,
+                    price2: price2Val*100,
+                    status: statusVal,
+                    date1: date1Val,
+                    date2: date2Val
+                }
+            });
+            $("input[name='title']").val("");
+            $("input[name='price1']").val("");
+            $("input[name='price2']").val("");
+
+            // $("#select_id option[text='jQuery']").attr("selected", true);
+            //被选中的这一列的值
+            $("#status").val(0);
+            //下拉选项框比较特殊  他需要使用form表单对象调用render刷新整个页面才有用
+            form.render();
+            $("input[name='date1']").val("");
+            $("input[name='date2']").val("");
+        })
+        //
+        dateObj1 = laydate.render({
             elem: '#date1',
             theme: '#393D49',
-            showBottom: false
+            showBottom: false,
+            done: function (value, date, endDate) {
+                var arr = value.split("-");
+                console.log(arr);
+                dateObj2.config.min.year = arr[0];
+                dateObj2.config.min.month = arr[1]-1;
+                dateObj2.config.min.date = arr[2];
+            }
         });
-        laydate.render({
+        dateObj2 = laydate.render({
             elem: '#date2',
             theme: '#393D49',
-            showBottom: false
+            showBottom: false,
+            done: function (value, date, endDate) {
+                var arr = value.split("-");
+                dateObj1.config.max.year = arr[0];
+                dateObj1.config.max.month = arr[1]-1;
+                dateObj1.config.max.date = arr[2];
+            }
         });
+
         table.render({
             elem: '#itemTableAll'
             , url: '/item/getItemByPage'
+            , height: '600px'
             , toolbar: '#topBtnGroup' //开启头部工具栏，并为其绑定左侧模板
             , defaultToolbar: ['filter', { //自定义头部工具栏右侧图标。如无需自定义，去除该参数即可
                 title: '提示'
@@ -53,6 +115,20 @@ $(function () {
             ]
 
             , page: true
+            , limit: 20
+            ,parseData: function (res) {
+                if(res.data==null){
+                    window.location.href = "http://localhost:8080/error.jsp";
+                }else{
+                    return {
+                        "code": res.code, //解析接口状态
+                        "msg": res.msg, //解析提示文本
+                        "count": res.count, //解析数据长度
+                        "data": res.data //解析数据列表
+                    };
+                }
+
+            }
         });
         /*
         *   注意这里绑定的不是table表的id值 而是lay-filter
@@ -85,7 +161,15 @@ $(function () {
                         }
                     });
                     break;
-                case 'addItem':
+                case 'exports':
+                    var data = checkStatus.data;
+
+                    var ids = [];
+                    $.each(data,function (i,n) {
+                        ids[i] = n.id;
+                    });
+                    window.location.href = "/item/exportsExcel?ids="+ids;
+
 
                     break;
                 case 'upload':
@@ -147,36 +231,16 @@ $(function () {
                         }
                     });
                     break;
-
-            }
-            ;
-
+            };
         });
-        // 监听行工具事件
+        //监听行工具事件
         table.on('tool(itemTableAll)', function (obj) {
-            var data = obj.data;
-            if (obj.event === 'del') {
-                var jsonStr = JSON.stringify(data);
-                var json = eval('(' + jsonStr + ')');
-                console.log(json.id);
-                $.ajax({
-                    type: "POST",
-                    url: "/item/changeItemStatus",
-                    dataType: "json",
-                    data: "ids=" + json.id + "&statusCode=3",
-                    success: function (msg) {
-                        layer.alert(msg.msg);
-                        table.reload('itemTableAll', {
-                            url: '/item/getItemByPage'
-                        });
-                    }
-                });
-            } else if (obj.event === 'edit') {
-
+            var dataJson = obj.data;
+            if (obj.event === 'edit') {
+                console.log(dataJson);
+            } else if (obj.event === 'export') {
+                window.location.href = "/item/exportExcel?itemId="+dataJson.id
             }
         });
-
     });
 })
-
-
