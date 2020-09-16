@@ -1,11 +1,12 @@
 package com.taotao.service;
 
 import com.taotao.bean.TbItem;
-import com.taotao.common.TaotaoResult;
+import com.taotao.utils.TaotaoResult;
+import com.taotao.vo.LayuiEditResult;
 import com.taotao.vo.LayuiTableResult;
 import com.taotao.vo.MultipleQuery;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-
+import org.springframework.web.multipart.MultipartFile;
 import java.util.List;
 
 public interface TbItemService {
@@ -52,4 +53,26 @@ public interface TbItemService {
      * @return
      */
     HSSFWorkbook getexportExcel(List<Long> ids);
+
+    /**
+     * 吧图片存入到nginx里面（多图片上传）。并且把图片地址封装到TaotaoResult里面
+     * @param file
+     * @return
+     */
+    TaotaoResult addPic(MultipartFile file);
+
+    /**
+     * 添加图片到nginx里面（富文本编辑器），并且把图片地址和图片名称封装到LayuiEditResult里面
+     * @param file
+     * @return
+     */
+    LayuiEditResult addPicDes(MultipartFile file);
+
+    /**
+     * 添加商品基本信息与商品描述信息
+     * @param tbItem 商品基本信息 缺少id 状态 创建时间 更新时间
+     * @param des 商品描述信息
+     * @return
+     */
+    TaotaoResult addItem(TbItem tbItem, String des);
 }

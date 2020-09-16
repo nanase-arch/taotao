@@ -12,6 +12,7 @@
 </head>
 <body>
 <div>
+    <%--多条件搜索form表单--%>
     <form class="layui-form">
         <div class="layui-form-item">
             <%--商品标题--%>
@@ -64,17 +65,23 @@
 </div>
 
 <table class="layui-hide" id="itemTableAll" lay-filter="itemTableAll"></table>
+<%--table表左边头部按钮组--%>
 <div style="display: none" class="layui-btn-container" id="topBtnGroup">
     <button class="layui-btn layui-btn-sm" lay-event="delItem">选中删除</button>
     <button class="layui-btn layui-btn-sm" lay-event="upload">商品上架</button>
     <button class="layui-btn layui-btn-sm" lay-event="offload">商品下架</button>
-    <button class="layui-btn layui-btn-sm" lay-event="addItem">选中导出</button>
+    <button class="layui-btn layui-btn-sm" lay-event="exports">选中导出</button>
 </div>
+<%--table表右边按钮组--%>
 <div style="display: none" type="text/html" id="rightBtnGroup">
     <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
-    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="export" >导出</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="export">导出</a>
 </div>
-
+<%--图片转化--%>
+<div style="display: none" id="itemImage">
+    <img src = "{{d.itemImage}}" style = "width: 100px;height: 100px"/>
+</div>
+<%--商品状态转化--%>
 <script type="text/html" id="statusTransform">
     {{#  if(d.status == 1){ }}
     <span>正常</span>
@@ -84,9 +91,7 @@
     <span>删除</span>
     {{#  } }}
 </script>
-<script type="text/javascript" id="itemImage">
-    <img src = "{{d.itemImage}}" style = "width: 100px;height: 100px"/>
-</script>
+
 
 </body>
 </html>

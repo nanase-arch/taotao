@@ -1,6 +1,7 @@
 package com.taotao.mapper;
 
 import com.taotao.bean.TbItem;
+import com.taotao.bean.TbItemCat;
 import com.taotao.vo.MultipleQuery;
 import com.taotao.vo.TbItemVo;
 import org.apache.ibatis.annotations.Param;
@@ -60,4 +61,8 @@ public interface TbItemMapper {
     List<TbItemVo> getMultipleQuery(MultipleQuery multipleQuery);
 
     List<TbItemVo> findTbItemVoByIds(@Param("ids") List<Long> ids);
+
+    List<TbItemCat> findId(Long id);
+
+    int addItem(TbItem tbItem);
 }

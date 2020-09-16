@@ -10,4 +10,10 @@ $(function () {
     $("#findTbItemAll").click(function () {
         contentObj.attr("src","/showItem.jsp");
     })
+    $("#showAddItem").click(function () {
+        contentObj.attr("src","/showAddItem.jsp");
+    })
+    $("#showAddItemTemplate").click(function () {
+        contentObj.attr("src","/showAddItemTemplate.jsp");
+    })
 })

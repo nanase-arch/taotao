@@ -1,27 +1,31 @@
 package com.taotao.service.impl;
 
 import com.taotao.bean.TbItem;
-import com.taotao.common.TaotaoResult;
+
+import com.taotao.bean.TbItemDesc;
+import com.taotao.mapper.TbItemDescMapper;
+import com.taotao.utils.IDUtils;
+import com.taotao.utils.TaotaoResult;
 import com.taotao.mapper.TbItemMapper;
 import com.taotao.service.TbItemService;
-import com.taotao.vo.LayuiTableResult;
-import com.taotao.vo.MultipleQuery;
-import com.taotao.vo.TbItemVo;
+import com.taotao.vo.*;
 import org.apache.poi.hssf.usermodel.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import org.springframework.web.multipart.MultipartFile;
+import java.io.File;
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Service
 public class TbItemServiceImpl implements TbItemService {
     @Autowired
     private TbItemMapper tbItemMapper;
+    @Autowired
+    private TbItemDescMapper tbItemDescMapper;
 
     @Override
     public TbItem findTbItemById(Long itemId) {
@@ -31,7 +35,6 @@ public class TbItemServiceImpl implements TbItemService {
 
     @Override
     public LayuiTableResult getItemByPage(Integer page, Integer limit) {
-        int i=1/0;
         LayuiTableResult result = new LayuiTableResult();
         result.setCode(0);
         result.setMsg("");
@@ -44,7 +47,7 @@ public class TbItemServiceImpl implements TbItemService {
 
     @Override
     public TaotaoResult delItemById(List<TbItem> tbitems) {
-        System.out.println("aaa");
+
         if (tbitems == null && tbitems.size() == 0) {
             return TaotaoResult.build(500, "删除商品失败");
         }
@@ -257,12 +260,87 @@ public class TbItemServiceImpl implements TbItemService {
         return workbook;
     }
 
+    @Override
+    public TaotaoResult addPic(MultipartFile file) {
+        //得到图片名称
+        String filename = file.getOriginalFilename();
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        String time = format.format(new Date());
+        File folder = new File("e://up/"+time);
+        if (!folder.exists()) {
+            folder.mkdir();
+        }
+        //修改图片名称
+        filename = IDUtils.genImageName() + filename.substring(filename.lastIndexOf("."));
+        try {
+            //就会把图片存入到我们的E盘up文件夹里面
+            file.transferTo(new File(folder,filename));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return TaotaoResult.ok("http://localhost/"+time+"/"+filename);
+    }
+
+    @Override
+    public LayuiEditResult addPicDes(MultipartFile file) {
+        //得到图片名称
+        String filename = file.getOriginalFilename();
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        String time = format.format(new Date());
+        File folder = new File("e://up/"+time);
+        if (!folder.exists()) {
+            folder.mkdir();
+        }
+        //修改图片名称
+        filename = IDUtils.genImageName() + filename.substring(filename.lastIndexOf("."));
+        try {
+            //就会把图片存入到我们的E盘up文件夹里面
+            file.transferTo(new File(folder,filename));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        LayuiEditResult result = new LayuiEditResult();
+        result.setCode(0);
+        result.setMsg("");
+        PicData data = new PicData();
+        data.setSrc("http://localhost/"+time+"/"+filename);
+        data.setTitle(filename);
+        result.setData(data);
+        return result;
+    }
+
+    @Override
+    public TaotaoResult addItem(TbItem tbItem, String des) {
+        Date date = new Date();
+        tbItem.setCreated(date);
+        tbItem.setUpdated(date);
+        //生成商品id的方法
+        long itemId = IDUtils.genItemId();
+        tbItem.setId(itemId);
+        //商品信息准备完毕了 添加商品信息到商品表里面去
+        int count1 = tbItemMapper.addItem(tbItem);
+        if(count1==0){
+            return TaotaoResult.build(200,"添加商品基本信息失败");
+        }
+        TbItemDesc tbItemDesc = new TbItemDesc();
+        tbItemDesc.setItemId(itemId);
+        tbItemDesc.setItemDesc(des);
+        tbItemDesc.setCreated(date);
+        tbItemDesc.setUpdated(date);
+        int count2 = tbItemDescMapper.addItemDes(tbItemDesc);
+        if(count2==0){
+            return TaotaoResult.build(200,"添加商品描述失败");
+        }
+        return TaotaoResult.build(200,"添加商品成功");
+    }
+
+
     //单独计算价格的方法
     private String getCalculationPrice(Long price) {
         Long integer = price / 100;
         Long decimal = price % 100;
         //1100%100 = 0
-        if(decimal==0){
+        if (decimal == 0) {
             return integer + ".00";
         }
         return integer + "." + decimal;

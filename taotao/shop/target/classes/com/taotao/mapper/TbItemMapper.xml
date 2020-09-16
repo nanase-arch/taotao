@@ -158,5 +158,12 @@
         </where>
 
     </select>
+    <select id="findId" resultType="com.taotao.bean.TbItemCat">
+        SELECT * FROM tbitemcat WHERE parentId = #{id}
+    </select>
+    <insert id="addItem" parameterType="com.taotao.bean.TbItem">
+        INSERT INTO tbitem(id, title, sellPoint, price, num, barcode, image, cId, created, updated)
+        VALUE (#{id},#{title},#{sellPoint},#{price},#{num},#{barcode},#{image},#{cId},#{created},#{updated})
+    </insert>
 
 </mapper>

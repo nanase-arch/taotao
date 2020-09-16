@@ -52,13 +52,13 @@
                             <a href="javascript:;">商品分类查询</a>
                         </dd>
                         <dd>
-                            <a href="javascript:;">商品添加</a>
+                            <a id="showAddItem" href="javascript:;">商品添加</a>
                         </dd>
                         <dd>
                             <a id="findTbItemAll" href="javascript:;">商品查询</a>
                         </dd>
                         <dd>
-                            <a href="javascript:;">商品规格参数模板添加</a>
+                            <a id="showAddItemTemplate" href="javascript:;">商品规格参数模板添加</a>
                         </dd>
                         <dd>
                             <a href="javascript:;">商品规格参数模板查询</a>
@@ -121,8 +121,10 @@
         <!-- 内容主体区域 -->
         <div style="padding: 15px;">
             <iframe id="content" class="layadmin-iframe ifrem_voice" src="/statistics.jsp"
-                    width="100%" height="700px" frameborder="0" name="voiceList"
-                    scrolling="no"></iframe>
+                    width="100%" height="750px" frameborder="0" name="voiceList"
+                    scrolling="no">
+
+            </iframe>
         </div>
     </div>
 

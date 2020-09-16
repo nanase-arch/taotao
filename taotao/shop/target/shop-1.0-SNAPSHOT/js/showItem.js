@@ -1,6 +1,4 @@
 $(function () {
-    var dateObj1;
-    var dateObj2;
     layui.use(['form', 'laydate', 'table'], function () {
         var form = layui.form
             , layer = layui.layer
@@ -42,8 +40,6 @@ $(function () {
             $("input[name='title']").val("");
             $("input[name='price1']").val("");
             $("input[name='price2']").val("");
-
-            // $("#select_id option[text='jQuery']").attr("selected", true);
             //被选中的这一列的值
             $("#status").val(0);
             //下拉选项框比较特殊  他需要使用form表单对象调用render刷新整个页面才有用
@@ -52,7 +48,7 @@ $(function () {
             $("input[name='date2']").val("");
         })
         //
-        dateObj1 = laydate.render({
+       var dateObj1 = laydate.render({
             elem: '#date1',
             theme: '#393D49',
             showBottom: false,
@@ -64,7 +60,7 @@ $(function () {
                 dateObj2.config.min.date = arr[2];
             }
         });
-        dateObj2 = laydate.render({
+       var dateObj2 = laydate.render({
             elem: '#date2',
             theme: '#393D49',
             showBottom: false,
@@ -98,25 +94,15 @@ $(function () {
                     , {field: 'itemImage', title: '商品图片', width: 160, templet: '#itemImage'}
                     , {field: 'tbItemCatName', title: '分类名称', width: 120}
                     , {field: 'status', title: '商品状态', width: 120, sort: true, templet: '#statusTransform'}
-                    , {
-                    field: 'created',
-                    title: '创建时间',
-                    width: 160,
-                    templet: "<div>{{layui.util.toDateString(d.created, 'yyyy-MM-dd HH:mm:ss')}}</div>"
-                }
-                    , {
-                    field: 'updated',
-                    title: '更新时间',
-                    width: 160,
-                    templet: "<div>{{layui.util.toDateString(d.created, 'yyyy-MM-dd HH:mm:ss')}}</div>"
-                }
+                    , {field: 'created', title: '创建时间', width: 160, templet: "<div>{{layui.util.toDateString(d.created, 'yyyy-MM-dd HH:mm:ss')}}</div>"}
+                    , {field: 'updated', title: '更新时间', width: 160, templet: "<div>{{layui.util.toDateString(d.created, 'yyyy-MM-dd HH:mm:ss')}}</div>"}
                     , {fixed: 'right', title: '操作', toolbar: '#rightBtnGroup', width: 150}
                 ]
             ]
 
             , page: true
             , limit: 20
-            ,parseData: function (res) {
+            , parseData: function (res) {
                 if(res.data==null){
                     window.location.href = "http://localhost:8080/error.jsp";
                 }else{
@@ -127,7 +113,6 @@ $(function () {
                         "data": res.data //解析数据列表
                     };
                 }
-
             }
         });
         /*
@@ -163,14 +148,11 @@ $(function () {
                     break;
                 case 'exports':
                     var data = checkStatus.data;
-
                     var ids = [];
                     $.each(data,function (i,n) {
                         ids[i] = n.id;
                     });
                     window.location.href = "/item/exportsExcel?ids="+ids;
-
-
                     break;
                 case 'upload':
                     var data = checkStatus.data;
@@ -200,7 +182,6 @@ $(function () {
                             });
                         }
                     });
-
                     break;
                 case 'offload':
                     var data = checkStatus.data;
