@@ -14,6 +14,6 @@ $(function () {
         contentObj.attr("src","/showAddItem.jsp");
     })
     $("#showAddItemTemplate").click(function () {
-        contentObj.attr("src","/showAddItemTemplate.jsp");
+        contentObj.attr("src","/showAddParam.jsp");
     })
 })

@@ -1,8 +1,10 @@
 package com.taotao.controller;
 
 import com.taotao.bean.TbItem;
+import com.taotao.bean.TbItemParamValue;
 import com.taotao.utils.TaotaoResult;
 import com.taotao.service.TbItemService;
+import com.taotao.vo.Item;
 import com.taotao.vo.LayuiEditResult;
 import com.taotao.vo.LayuiTableResult;
 import com.taotao.vo.MultipleQuery;
@@ -122,8 +124,8 @@ public class ItemController {
     }
 
     @RequestMapping("/addItem")
-    private TaotaoResult addItem(TbItem tbItem,String des){
-        TaotaoResult result = tbItemService.addItem(tbItem,des);
-        return result;
+    private TaotaoResult addItem(@RequestBody Item item){
+        TaotaoResult result = tbItemService.addItem(item);
+        return null;
     }
 }

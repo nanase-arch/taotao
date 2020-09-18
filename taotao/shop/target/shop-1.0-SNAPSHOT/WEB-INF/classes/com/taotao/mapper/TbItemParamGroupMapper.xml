@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.taotao.mapper.TbItemParamGroupMapper">
+    <resultMap id="groupHasTerm" type="com.taotao.bean.TbItemParamGroup">
+        <id property="id" column="id"/>
+        <result property="groupName" column="groupName"/>
+        <result property="itemCatId" column="itemCatId"/>
+        <collection property="paramKeys" ofType="com.taotao.bean.TbItemParamKey">
+            <id property="id" column="paramId"/>
+            <result property="paramName" column="paramName"/>
+        </collection>
+    </resultMap>
+    <select id="findParamByCId" resultMap="groupHasTerm">
+        SELECT
+            a.id,
+            a.groupName,
+            a.itemCatId,
+            b.id paramId,
+            b.paramName
+        FROM
+            tbitemparamgroup a
+            INNER JOIN
+            tbitemparamkey b ON a.id = b.groupId
+        WHERE
+            a.itemCatId = #{cId}
+    </select>
+    <insert id="addParamGroup" parameterType="com.taotao.bean.TbItemParamGroup">
+        <!--
+            order:执行完插入sql语句之前 还是之后执行selectKey里面的sql语句
+            resultType: select LAST_INSERT_ID()他的返回类型
+            keyProperty:我们传入了一个对象group(name，cId) 没有id
+                        我们吧执行了select LAST_INSERT_ID()sql语句的返回结果集装到
+                        group对象里面的id属性里面去
+
+        -->
+        <selectKey keyProperty="id" order="AFTER" resultType="int">
+            select LAST_INSERT_ID()
+        </selectKey>
+        INSERT INTO tbitemparamgroup(groupName, itemCatId) VALUE (#{groupName},#{itemCatId});
+    </insert>
+
+    <insert id="addParamKey">
+        INSERT INTO tbitemparamkey(paramName, groupId) VALUE
+        <if test="paramKeys!=null and paramKeys.size>0">
+            <foreach collection="paramKeys" separator="," item="param">
+                (#{param.paramName},#{param.groupId})
+            </foreach>
+        </if>
+    </insert>
+    <insert id="addItemParam" parameterType="com.taotao.bean.TbItemParamValue">
+        INSERT INTO tbitemparamvalue(paramValue, itemId) VALUE
+        <if test="params!=null and params.size>0">
+            <foreach collection="params" separator="," item="param">
+                (#{param.paramValue},#{param.itemId})
+            </foreach>
+        </if>
+    </insert>
+</mapper>

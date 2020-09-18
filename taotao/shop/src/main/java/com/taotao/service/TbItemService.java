@@ -2,6 +2,7 @@ package com.taotao.service;
 
 import com.taotao.bean.TbItem;
 import com.taotao.utils.TaotaoResult;
+import com.taotao.vo.Item;
 import com.taotao.vo.LayuiEditResult;
 import com.taotao.vo.LayuiTableResult;
 import com.taotao.vo.MultipleQuery;
@@ -74,5 +75,5 @@ public interface TbItemService {
      * @param des 商品描述信息
      * @return
      */
-    TaotaoResult addItem(TbItem tbItem, String des);
+    TaotaoResult addItem(Item item);
 }

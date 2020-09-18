@@ -22,7 +22,6 @@
 </head>
 <body>
 <form class="layui-form" id="addItem" lay-filter="example">
-    <input type="hidden" id="cId" name="cId"/>
     <div class="layui-form-item">
         <label class="layui-form-label">商品类目</label>
         <div class="layui-input-block">
@@ -89,6 +88,16 @@
             </textarea>
         </div>
     </div>
+    <%--商品规格参数--%>
+    <div class="layui-form-item">
+        <label class="layui-form-label">规格参数</label>
+        <div class="layui-input-block">
+            <table id="table1" style="border-collapse:separate; border-spacing:0px 10px;">
+
+            </table>
+        </div>
+    </div>
+
 
     <div class="layui-form-item">
         <div class="layui-input-block">

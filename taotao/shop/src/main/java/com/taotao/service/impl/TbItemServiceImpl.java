@@ -4,6 +4,7 @@ import com.taotao.bean.TbItem;
 
 import com.taotao.bean.TbItemDesc;
 import com.taotao.mapper.TbItemDescMapper;
+import com.taotao.mapper.TbItemParamGroupMapper;
 import com.taotao.utils.IDUtils;
 import com.taotao.utils.TaotaoResult;
 import com.taotao.mapper.TbItemMapper;
@@ -26,7 +27,8 @@ public class TbItemServiceImpl implements TbItemService {
     private TbItemMapper tbItemMapper;
     @Autowired
     private TbItemDescMapper tbItemDescMapper;
-
+    @Autowired
+    private TbItemParamGroupMapper tbItemParamGroupMapper;
     @Override
     public TbItem findTbItemById(Long itemId) {
         TbItem tbItem = tbItemMapper.findTbItemById(itemId);
@@ -47,7 +49,6 @@ public class TbItemServiceImpl implements TbItemService {
 
     @Override
     public TaotaoResult delItemById(List<TbItem> tbitems) {
-
         if (tbitems == null && tbitems.size() == 0) {
             return TaotaoResult.build(500, "删除商品失败");
         }
@@ -73,7 +74,9 @@ public class TbItemServiceImpl implements TbItemService {
         if (ids == null && ids.length == 0 && statusCode == 2) {
             return TaotaoResult.build(500, "商品下架失败");
         }
+
         int count = tbItemMapper.changeItemStatus(statusCode, ids);
+
         if (count == 0 && statusCode == 1) {
             return TaotaoResult.build(500, "商品上架失败");
         }
@@ -310,8 +313,16 @@ public class TbItemServiceImpl implements TbItemService {
     }
 
     @Override
-    public TaotaoResult addItem(TbItem tbItem, String des) {
+    public TaotaoResult addItem(Item item) {
         Date date = new Date();
+        TbItem tbItem=new TbItem();
+        tbItem.setcId(item.getcId());
+        tbItem.setTitle(item.getTitle());
+        tbItem.setImage(item.getImage());
+        tbItem.setNum(Integer.valueOf(item.getNum()));
+        tbItem.setPrice(Long.valueOf(item.getPrice()));
+        tbItem.setSellPoint(item.getSellPoint());
+        tbItem.setStatus(Byte.valueOf(item.getBarcode()));
         tbItem.setCreated(date);
         tbItem.setUpdated(date);
         //生成商品id的方法
@@ -324,12 +335,19 @@ public class TbItemServiceImpl implements TbItemService {
         }
         TbItemDesc tbItemDesc = new TbItemDesc();
         tbItemDesc.setItemId(itemId);
-        tbItemDesc.setItemDesc(des);
+        tbItemDesc.setItemDesc(item.getDes());
         tbItemDesc.setCreated(date);
         tbItemDesc.setUpdated(date);
         int count2 = tbItemDescMapper.addItemDes(tbItemDesc);
         if(count2==0){
             return TaotaoResult.build(200,"添加商品描述失败");
+        }
+       for (int i=0;i<item.getParams().size();i++){
+            item.getParams().get(i).setItemId(itemId);
+       }
+        int count3 = tbItemParamGroupMapper.addItemParam(item.getParams());
+        if (count3==0){
+            return TaotaoResult.build(200,"添加商品规格参数失败");
         }
         return TaotaoResult.build(200,"添加商品成功");
     }
