@@ -7,16 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0365374a-4fc7-406e-b84c-c9a643d15ace" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/taotao/controller/ItemParamController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/taotao/mapper/TbItemParamGroupMapper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/taotao/mapper/TbItemParamGroupMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/taotao/service/TbItemParamService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/taotao/service/impl/TbItemParamServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/taotao/vo/Item.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/js/showAddParam.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/js/showAddItemTemplate.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/shop-1.0-SNAPSHOT/js/showAddItemTemplate.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/shop-1.0-SNAPSHOT/showAddItemTemplate.jsp" afterPath="" />
       <change type="DELETED" beforePath="D:/taotaoshop/.idea/compiler.xml" afterPath="" />
       <change type="DELETED" beforePath="D:/taotaoshop/.idea/libraries/Maven__aopalliance_aopalliance_1_0.xml" afterPath="" />
       <change type="DELETED" beforePath="D:/taotaoshop/.idea/libraries/Maven__com_alibaba_druid_1_0_9.xml" afterPath="" />
@@ -83,25 +73,15 @@
       <change type="DELETED" beforePath="D:/taotaoshop/target/classes/log4j.properties" afterPath="" />
       <change type="DELETED" beforePath="D:/taotaoshop/target/classes/springmvc.xml" afterPath="" />
       <change type="DELETED" beforePath="D:/taotaoshop/target/classes/sqlMapConfig.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/taotao/controller/ItemCatController.class" afterPath="$PROJECT_DIR$/target/classes/com/taotao/controller/ItemCatController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/taotao/controller/ItemController.class" afterPath="$PROJECT_DIR$/target/classes/com/taotao/controller/ItemController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/taotao/service/impl/TbItemServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/taotao/service/impl/TbItemServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/shop-1.0-SNAPSHOT/WEB-INF/classes/com/taotao/controller/ItemCatController.class" afterPath="$PROJECT_DIR$/target/shop-1.0-SNAPSHOT/WEB-INF/classes/com/taotao/controller/ItemCatController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/shop-1.0-SNAPSHOT/WEB-INF/classes/com/taotao/controller/ItemController.class" afterPath="$PROJECT_DIR$/target/shop-1.0-SNAPSHOT/WEB-INF/classes/com/taotao/controller/ItemController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/shop-1.0-SNAPSHOT/WEB-INF/classes/com/taotao/service/impl/TbItemServiceImpl.class" afterPath="$PROJECT_DIR$/target/shop-1.0-SNAPSHOT/WEB-INF/classes/com/taotao/service/impl/TbItemServiceImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/taotao/controller/ItemCatController.java" afterPath="$PROJECT_DIR$/src/main/java/com/taotao/controller/ItemCatController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/taotao/controller/ItemController.java" afterPath="$PROJECT_DIR$/src/main/java/com/taotao/controller/ItemController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/taotao/mapper/TbItemDescMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/taotao/mapper/TbItemDescMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/taotao/service/TbItemService.java" afterPath="$PROJECT_DIR$/src/main/java/com/taotao/service/TbItemService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/taotao/mapper/TbItemParamGroupMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/taotao/mapper/TbItemParamGroupMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/taotao/mapper/TbItemParamGroupMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/taotao/mapper/TbItemParamGroupMapper.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/taotao/service/impl/TbItemServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/taotao/service/impl/TbItemServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/index.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/showAddItem.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/showAddItem.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/showItem.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/showItem.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/showAddParam.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/showAddParam.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/showAddItem.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/showAddItem.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/shop-1.0-SNAPSHOT/js/index.js" afterPath="$PROJECT_DIR$/target/shop-1.0-SNAPSHOT/js/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/shop-1.0-SNAPSHOT/showAddItem.jsp" afterPath="$PROJECT_DIR$/target/shop-1.0-SNAPSHOT/showAddItem.jsp" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/webapp/showAddItemTemplate.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/showAddParam.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -117,8 +97,8 @@
       <file leaf-file-name="TbItemServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/taotao/service/impl/TbItemServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="347" column="75" lean-forward="false" selection-start-line="347" selection-start-column="75" selection-end-line="347" selection-end-column="75" />
+            <state relative-caret-position="-533">
+              <caret line="323" column="49" lean-forward="false" selection-start-line="323" selection-start-column="49" selection-end-line="323" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -127,8 +107,8 @@
       <file leaf-file-name="TbItemParamGroupMapper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/taotao/mapper/TbItemParamGroupMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="31" column="44" lean-forward="false" selection-start-line="31" selection-start-column="44" selection-end-line="31" selection-end-column="50" />
+            <state relative-caret-position="191">
+              <caret line="31" column="35" lean-forward="false" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -137,23 +117,56 @@
       <file leaf-file-name="TbItemParamGroupMapper.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/taotao/mapper/TbItemParamGroupMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1045">
-              <caret line="55" column="53" lean-forward="false" selection-start-line="55" selection-start-column="53" selection-end-line="55" selection-end-column="53" />
+            <state relative-caret-position="173">
+              <caret line="55" column="68" lean-forward="false" selection-start-line="55" selection-start-column="68" selection-end-line="55" selection-end-column="68" />
               <folding>
-                <marker date="1600422230412" expanded="true" signature="754:1041" ph="SELECT a.id,... tbitemparamgroup" />
+                <marker date="1600659590395" expanded="true" signature="754:1041" ph="SELECT a.id,... tbitemparamgroup" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="showAddItem.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="showAddItem.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/js/showAddItem.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2394">
-              <caret line="126" column="50" lean-forward="false" selection-start-line="126" selection-start-column="50" selection-end-line="126" selection-end-column="50" />
+            <state relative-caret-position="-965">
+              <caret line="88" column="35" lean-forward="false" selection-start-line="88" selection-start-column="35" selection-end-line="88" selection-end-column="35" />
               <folding>
-                <marker date="1600408946000" expanded="true" signature="4458:4486" ph="..." />
+                <marker date="1600659994188" expanded="true" signature="4400:4428" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="showAddParam.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/js/showAddParam.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1615">
+              <caret line="85" column="73" lean-forward="true" selection-start-line="85" selection-start-column="73" selection-end-line="85" selection-end-column="73" />
+              <folding>
+                <marker date="1600678984547" expanded="true" signature="2969:2982" ph="..." />
+                <marker date="1600678984547" expanded="true" signature="4372:4385" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TbItemParamServiceImpl.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/taotao/service/impl/TbItemParamServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="268">
+              <caret line="42" column="30" lean-forward="true" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/js/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="16" column="67" lean-forward="false" selection-start-line="16" selection-start-column="67" selection-end-line="16" selection-end-column="67" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -207,20 +220,21 @@
         <option value="$PROJECT_DIR$/src/main/webapp/additems.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/showAddItemTemplate.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/js/showAddItem.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/js/index.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/taotao/service/TbItemParamService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/taotao/controller/ItemParamController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/taotao/service/impl/TbItemParamServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/showAddParam.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/taotao/controller/controller/ItemController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/taotao/controller/ItemController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/taotao/service/TbItemService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/taotao/service/impl/TbItemServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/taotao/mapper/TbItemParamGroupMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/taotao/mapper/TbItemDescMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/taotao/mapper/TbItemParamGroupMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/showAddItem.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/taotao/mapper/TbItemParamGroupMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/taotao/mapper/TbItemParamGroupMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/js/showAddItem.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/taotao/service/impl/TbItemServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/taotao/controller/ItemController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/js/index.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/js/showAddParam.js" />
       </list>
     </option>
   </component>
@@ -282,7 +296,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -409,32 +425,12 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="layui" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="layui" type="462c0819:PsiDirectoryNode" />
               <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shop" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="layui" type="462c0819:PsiDirectoryNode" />
-              <item name="lay" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -734,12 +730,13 @@
       <workItem from="1600221659034" duration="4136000" />
       <workItem from="1600247557468" duration="2433000" />
       <workItem from="1600326022590" duration="8941000" />
-      <workItem from="1600399766750" duration="12797000" />
+      <workItem from="1600399766750" duration="12935000" />
+      <workItem from="1600651107789" duration="15054000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103431000" />
+    <option name="totallyTimeSpent" value="118623000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -762,10 +759,10 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.61875945" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1069079" sideWeight="0.61875945" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.68421054" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.04605263" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30181542" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -824,20 +821,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="30" lean-forward="false" selection-start-line="3" selection-start-column="43" selection-end-line="9" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/layui/layui.all.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1083">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -886,14 +869,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/layui/images/face/0.gif">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/layui/css/zTreeStyle.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
-          <caret line="78" column="81" lean-forward="false" selection-start-line="78" selection-start-column="81" selection-end-line="78" selection-end-column="81" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/layui/lay/jquery.ztree.core.js">
@@ -971,14 +946,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/js/showAddItemTemplate.js" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/showAddItemTemplate.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="44" lean-forward="false" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/taotao/bean/TbItemParamGroup.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
@@ -1001,39 +968,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa4632.47782/TbItemParamGroup.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa4632.47782/TbItemParamGroup.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/taotao/common/TaotaoResult.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taotao/controller/controller/ItemController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/showAddParam.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1433">
-          <caret line="101" column="45" lean-forward="true" selection-start-line="101" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
-          <folding>
-            <marker date="1600408946000" expanded="true" signature="2800:2813" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/taotao/controller/controller/ItemController.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/taotao/controller/ItemParamController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
@@ -1046,22 +989,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
           <caret line="15" column="7" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taotao/service/impl/TbItemParamServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="42" column="30" lean-forward="true" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taotao/controller/ItemController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="118" column="5" lean-forward="true" selection-start-line="118" selection-start-column="5" selection-end-line="118" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -1116,37 +1043,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taotao/service/impl/TbItemServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="347" column="75" lean-forward="false" selection-start-line="347" selection-start-column="75" selection-end-line="347" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taotao/mapper/TbItemParamGroupMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="31" column="44" lean-forward="false" selection-start-line="31" selection-start-column="44" selection-end-line="31" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/js/showItem.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-83">
           <caret line="151" column="47" lean-forward="false" selection-start-line="151" selection-start-column="30" selection-end-line="151" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/taotao/mapper/TbItemParamGroupMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1045">
-          <caret line="55" column="53" lean-forward="false" selection-start-line="55" selection-start-column="53" selection-end-line="55" selection-end-column="53" />
-          <folding>
-            <marker date="1600422230412" expanded="true" signature="754:1041" ph="SELECT a.id,... tbitemparamgroup" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1154,6 +1054,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="8" column="33" lean-forward="true" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/layui/css/layui.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/layui/css/layui.mobile.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/layui/css/zTreeStyle.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="53">
+          <caret line="78" column="81" lean-forward="false" selection-start-line="78" selection-start-column="81" selection-end-line="78" selection-end-column="81" />
           <folding />
         </state>
       </provider>
@@ -1166,21 +1090,82 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/taotao/mapper/TbItemParamGroupMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="55" column="68" lean-forward="false" selection-start-line="55" selection-start-column="68" selection-end-line="55" selection-end-column="68" />
+          <folding>
+            <marker date="1600659590395" expanded="true" signature="754:1041" ph="SELECT a.id,... tbitemparamgroup" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/taotao/mapper/TbItemParamGroupMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="31" column="35" lean-forward="false" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/taotao/service/impl/TbItemServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-533">
+          <caret line="323" column="49" lean-forward="false" selection-start-line="323" selection-start-column="49" selection-end-line="323" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/showAddItem.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="58" lean-forward="false" selection-start-line="8" selection-start-column="58" selection-end-line="8" selection-end-column="58" />
+        <state relative-caret-position="246">
+          <caret line="103" column="10" lean-forward="true" selection-start-line="103" selection-start-column="10" selection-end-line="103" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/taotao/controller/ItemController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="128" column="22" lean-forward="true" selection-start-line="128" selection-start-column="22" selection-end-line="128" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/js/showAddItem.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2394">
-          <caret line="126" column="50" lean-forward="false" selection-start-line="126" selection-start-column="50" selection-end-line="126" selection-end-column="50" />
+        <state relative-caret-position="-965">
+          <caret line="88" column="35" lean-forward="false" selection-start-line="88" selection-start-column="35" selection-end-line="88" selection-end-column="35" />
           <folding>
-            <marker date="1600408946000" expanded="true" signature="4458:4486" ph="..." />
+            <marker date="1600659994188" expanded="true" signature="4400:4428" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="67" lean-forward="false" selection-start-line="16" selection-start-column="67" selection-end-line="16" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/showAddParam.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1615">
+          <caret line="85" column="73" lean-forward="true" selection-start-line="85" selection-start-column="73" selection-end-line="85" selection-end-column="73" />
+          <folding>
+            <marker date="1600678984547" expanded="true" signature="2969:2982" ph="..." />
+            <marker date="1600678984547" expanded="true" signature="4372:4385" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/taotao/service/impl/TbItemParamServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="42" column="30" lean-forward="true" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>

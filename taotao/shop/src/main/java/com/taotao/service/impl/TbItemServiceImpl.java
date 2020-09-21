@@ -322,7 +322,6 @@ public class TbItemServiceImpl implements TbItemService {
         tbItem.setNum(Integer.valueOf(item.getNum()));
         tbItem.setPrice(Long.valueOf(item.getPrice()));
         tbItem.setSellPoint(item.getSellPoint());
-        tbItem.setStatus(Byte.valueOf(item.getBarcode()));
         tbItem.setCreated(date);
         tbItem.setUpdated(date);
         //生成商品id的方法

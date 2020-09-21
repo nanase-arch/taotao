@@ -126,6 +126,6 @@ public class ItemController {
     @RequestMapping("/addItem")
     private TaotaoResult addItem(@RequestBody Item item){
         TaotaoResult result = tbItemService.addItem(item);
-        return null;
+        return result;
     }
 }

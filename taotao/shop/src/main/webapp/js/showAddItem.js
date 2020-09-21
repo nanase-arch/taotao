@@ -34,7 +34,7 @@ $(function () {
 
     };
 
-    layui.use(['form', 'upload', 'layedit'], function () {
+    layui.use(['form', 'upload', 'layedit','layer'], function () {
         var form = layui.form
             , layer = layui.layer
             , upload = layui.upload
@@ -86,7 +86,7 @@ $(function () {
                 type: 1,
                 offset: 't',
                 skin: 'layui-layer-lan', //加上边框
-                area: ['330px', '80%'], //宽高
+                area: ['330px', '20%'], //宽高
                 content: $('#treeBox'),
                 btn: ['确定', '取消'],
                 yes: function (index, layero) {
@@ -104,19 +104,18 @@ $(function () {
                         dataType: "json",
                         data: "cId=" + cId,
                         success: function (res) {
+                            $("#table1 tr").remove();
                             if (res.data.length == 0) {
-                                layer.alert("该分类木有规格参数信息，请先添加规格参数模板");
+                                alert("该分类木有规格参数信息，请先添加规格参数模板");
                                 $("#saveBtn").attr("class", "layui-btn layui-btn-disabled");
                             } else {
                                 var tabObj = $("#table1");
                                 var jsonArr = res.data;
                                 $.each(jsonArr, function (index, node) {
-                                    //得到了每一个json对象
-                                    var json = jsonArr[index];
                                     //根据key 取value 得到组名
-                                    var groupName = json["groupName"];
+                                    var groupName = node["groupName"];
                                     //根据key 取value 得到组里面的项数组对象
-                                    var paramArr = json["paramKeys"];
+                                    var paramArr = node["paramKeys"];
                                     $.each(paramArr, function (i, n) {
                                         //创建tr标签对象
                                         var trObj = $("<tr></tr>");
@@ -128,7 +127,7 @@ $(function () {
                                         td2.appendTo(trObj);
                                         var td2 = $("<td><input id='" + n.id + "' name='paramId' type='text'/></td>");
                                         td2.appendTo(trObj);
-                                        trObj.appendTo($("#table1"));
+                                        trObj.appendTo(tabObj);
                                     })
                                 })
 
@@ -191,7 +190,6 @@ $(function () {
                     //自己情况 多图片上传的图片
                     $("#showPic>img").remove();
                     index = layedit.build('des');
-
                 }
             });
 

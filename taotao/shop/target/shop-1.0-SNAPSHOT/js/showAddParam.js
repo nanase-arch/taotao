@@ -45,7 +45,7 @@ $(function () {
                 type: 1,
                 offset: 't',
                 skin: 'layui-layer-lan', //加上边框
-                area: ['330px', '80%'], //宽高
+                area: ['330px', '10%'], //宽高
                 content: $('#treeBox'),
                 btn: ['确定', '取消'],
                 yes: function (index, layero) {
@@ -54,7 +54,6 @@ $(function () {
                     } else {
                         itemCatNameObj.text(itemCatName);
                     }
-
                     layer.close(index);
                     //根据分类id查询规格参数组信息
                     $.ajax({
@@ -73,18 +72,26 @@ $(function () {
                             if (res.data.length == 0) {
                                 $("#paramTemplate").show();
                             } else {
-                                //修改规格参数信息
-                                layer.alert(res.msg);
-                            }
+                                $("#paramTemplate").show();
+                                //创建了一个模板
 
+                                $("#groupAndKey").append("<div class='layui-form-item'><label class='layui-form-label'>商品描述</label><div class='layui-input-inline' id='updateParam'></div></div>");
+                                $.each(res.data,function (index,node) {
+                                    var divObj1 = $("<div class='layui-form-item'><label class='layui-form-label'>规格参数组</label><div id='"+node.id+"' class='layui-input-inline layui-row layui-col-space10' style='width: 320px;'><div class='layui-col-md7'><input type='text' name='group' class='layui-input' value='"+node.groupName+"'/></div><div class='layui-col-md5'><input type='button' value='&#xe624;' onclick='addParamKey(this)' class='layui-btn layui-bg-blue layui-icon layui-icon-addition' /><input type='button' class='layui-btn layui-bg-red layui-icon layui-icon-addition' value='&#xe640;' id='"+node.id+"' onclick='delParamKey(this)'/></div></div></div>");
+                                    divObj1.appendTo($("#updateParam"));
+                                    var params=node.paramKeys;
+                                    $.each(params,function (i,n) {
+                                        console.log(node.id);
+                                        var divObj2 = $("<div class='layui-col-md3'>|___</div><div class='layui-col-md9'><input type='text' id='"+n.id+"' value='"+n.paramName+"' name='groupkey' class='layui-input'/></div>");
+                                        divObj2.appendTo($("#"+node.id));
+                                    })
+                                })
+                            }
                         }
                     });
                 }
             })
-
-
         });
-
     });
     //动态创建规格组
     $("#addParamGroup").click(function () {

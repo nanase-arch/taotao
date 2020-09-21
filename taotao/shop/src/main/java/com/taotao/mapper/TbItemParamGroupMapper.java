@@ -29,5 +29,5 @@ public interface TbItemParamGroupMapper {
      */
     int addParamKey(@Param("paramKeys") List<TbItemParamKey> paramKeys);
 
-    int addItemParam(List<TbItemParamValue> params);
+    int addItemParam(@Param("params") List<TbItemParamValue> params);
 }

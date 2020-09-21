@@ -93,12 +93,9 @@
         <label class="layui-form-label">规格参数</label>
         <div class="layui-input-block">
             <table id="table1" style="border-collapse:separate; border-spacing:0px 10px;">
-
             </table>
         </div>
     </div>
-
-
     <div class="layui-form-item">
         <div class="layui-input-block">
             <button type="button" id="saveBtn" class="layui-btn layui-bg-red" lay-submit="">立即提交</button>

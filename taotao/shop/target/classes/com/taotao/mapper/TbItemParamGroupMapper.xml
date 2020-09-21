@@ -50,10 +50,10 @@
         </if>
     </insert>
     <insert id="addItemParam" parameterType="com.taotao.bean.TbItemParamValue">
-        INSERT INTO tbitemparamvalue(paramValue, itemId) VALUE
+        INSERT INTO tbitemparamvalue(paramValue, itemId,paramId) VALUE
         <if test="params!=null and params.size>0">
             <foreach collection="params" separator="," item="param">
-                (#{param.paramValue},#{param.itemId})
+                (#{param.paramValue},#{param.itemId},#{param.paramId})
             </foreach>
         </if>
     </insert>
